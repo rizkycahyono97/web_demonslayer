@@ -1,0 +1,263 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Yeseva One", serif;
+  background-color: #080C10;
+}
+
+/* Jummbotron video */
+.video-jumbotron {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.jumbotron-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(30%);
+}
+
+.video-jumbotron-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.video-jumbotron-text h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-family: "Yeseva One", serif;
+}
+
+/* Button styling */
+.video-jumbotron-buttons {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  gap: 60px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Gelap dan tembus pandang */
+  color: white;
+  border: 2px solid #950101; /* Garis tepi merah */
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: rgba(255, 0, 0, 0.8); /* Background merah dengan sedikit transparansi */
+  color: #ffffff; /* Teks berubah warna menjadi hitam */
+  border-color: black; /* Garis tepi berubah menjadi hitam */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .video-jumbotron-text h1 {
+    font-size: 2em;
+  }
+
+  .video-jumbotron-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+}
+/* End of Jummbotron video */
+
+
+/* Product */
+.design-section {
+  /* background: url('../image/ornamen.jpg') no-repeat center center; */
+  background-size: cover; /* Full background image */
+  padding: 50px 20px;
+}
+
+.design-container {
+  display: grid;
+  grid-template-columns: 1fr 300px 300px; /* Kolom untuk teks, includes, dan gambar */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* background: rgba(149, 1, 1, 0.3);  */
+  background-color: #352F44;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Paragraf Styles */
+.design-paragraph {
+  grid-column: 1; /* Kolom pertama */
+  color: #FAF0E6;
+  
+}
+
+.design-paragraph h1 {
+  font-family: "Yeseva One", serif;
+}
+
+.design-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.design-description {
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+
+/* Includes Styles (Vertikal) */
+.design-includes {
+  grid-column: 2; /* Kolom kedua */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 2px solid #B9B4C7; /* Garis vertikal */
+  padding-left: 20px;
+}
+
+.includes-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #FAF0E6;
+}
+
+.includes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.includes-list li {
+  position: relative;
+  font-size: 1.1em;
+  padding-left: 15px;
+  color: #FAF0E6;
+}
+
+.includes-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #B9B4C7; /* Gold bullet point */
+  font-size: 1.2em;
+}
+
+/* Gambar Styles */
+.design-image {
+  grid-column: 3; /* Kolom ketiga */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.design-image img {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid #FAF0E6;
+  filter: brightness(90%);
+}
+
+/* Responsive Design for Tablet and Mobile */
+@media (max-width: 1024px) {
+  .design-container {
+    grid-template-columns: 1fr 1fr; /* Dua kolom untuk tablet */
+  }
+
+  .design-image {
+    grid-column: span 2; /* Gambar berada di bawah teks dan includes */
+  }
+
+  .design-image img {
+    max-width: 80%; /* Kurangi lebar untuk tablet */
+    height: auto; /* Pertahankan rasio gambar */
+  }
+}
+
+@media (max-width: 768px) {
+  .design-container {
+    grid-template-columns: 1fr; /* Semua elemen bertumpuk */
+    gap: 20px;
+  }
+
+  .design-paragraph {
+    text-align: center; /* Pusatkan teks pada ponsel */
+  }
+
+  .design-includes {
+    align-items: center; /* Pusatkan konten includes */
+    padding-left: 0;
+    border-left: none; /* Hapus garis vertikal */
+  }
+
+  .includes-title {
+    text-align: center; /* Pusatkan judul includes */
+  }
+
+  .includes-list {
+    align-items: center; /* Pusatkan list includes */
+  }
+
+  .design-image {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .design-image img {
+    max-width: 100%; /* Gambar memenuhi lebar layar */
+    height: auto; /* Pertahankan rasio gambar */
+  }
+}
+
+@media (max-width: 480px) {
+  .design-title {
+    font-size: 1.8em; /* Kurangi ukuran font pada layar kecil */
+  }
+
+  .design-description {
+    font-size: 1em; /* Sesuaikan ukuran teks */
+  }
+
+  .includes-title {
+    font-size: 1.2em; /* Ukuran lebih kecil untuk judul includes */
+  }
+
+  .includes-list li {
+    font-size: 1em; /* Ukuran font lebih kecil */
+  }
+
+  .design-image img {
+    max-width: 90%; /* Gambar sedikit lebih kecil untuk estetika */
+    margin: 0 auto;
+  }
+}
+
+/* End of Product */
