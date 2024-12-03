@@ -1,0 +1,257 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Cantarell", sans-serif;
+  background-color: #080C10;
+}
+
+/* <!-- characters image --> */
+
+/* characters-container */
+.main-characters-container, .hashira-characters-container, .uppermoon-characters-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 20px;
+  color:#950101;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+.heading {
+  text-align: center;
+  color: #fff;
+  padding-top: 10px;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 70px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border: solid #F8EDED 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  filter: brightness(70%);
+}
+
+.team-img {
+  width: 100%;
+  height: auto;
+  transition: 0.3s ease;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .team-img {
+  filter: brightness(130%);
+}
+
+.card:hover .card-content {
+  opacity: 1;
+}
+/* End characters-container */
+
+/* Ubuyashiki and Kibutsuji */
+.lightdarkness-characters-container {
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.lightdarkness-characters-container .heading {
+  font-size: 2rem;
+  color: #fff;
+  font-family: "Protest Revolution", sans-serif;
+  margin-bottom: 20px;
+}
+
+.lightdarkness-characters-container .grid {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 40px; 
+  flex-wrap: wrap; 
+}
+
+.lightdarkness-characters-container .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  width: 250px; 
+  height: 600px; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-end; 
+  background-color: #1a1a1a; 
+}
+
+.lightdarkness-characters-container .team-img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: 0.3s ease;
+}
+
+.lightdarkness-characters-container .card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7); 
+  color: white;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightdarkness-characters-container .card:hover .team-img {
+  filter: brightness(130%);
+}
+
+.lightdarkness-characters-container .card:hover .card-content {
+  opacity: 1;
+}
+/* End Ubuyashiki and Kibutsuji */
+/* <!-- Endcharacters image --> */
+
+
+
+/* percobaan */
+.card-percobaan {
+  width: 250px; 
+  height: 600px; 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+  border-radius: 5px;
+}
+
+.cover-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cover-image[alt="character"] 
+{
+  height: 570px;
+}
+
+
+.wrapper{
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.card-percobaan:hover .wrapper{
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+}
+
+.wrapper::before,
+.wrapper::after{
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+  border-radius: 5px;
+}
+
+.wrapper::before{
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+      to top,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5)68%,
+      rgba(12, 13, 19) 97%
+  );
+  border-radius: 5px;
+}
+.wrapper::after{
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+      to bottom,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19)97%
+  );
+  border-radius: 5px;
+}
+
+.card-percobaan:hover .wrapper::before,
+.wrapper::after{
+  opacity: 1;
+}
+
+.card-percobaan:hover .wrapper::after{
+  height: 120px;
+}
+
+.title {
+  width: 300px;
+  height: 50px;
+  padding-bottom: 20px;
+  transition: transform 0.5s;
+}
+
+.card-percobaan:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  height: 80%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card-percobaan:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+/* end percobaan */
+
+

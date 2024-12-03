@@ -1,0 +1,526 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Cantarell", sans-serif;
+  background-color: #080C10;
+  scroll-behavior: smooth;
+}
+
+/* top bar */
+.topbar-container {
+  z-index: 10;
+  position: relative;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #080C10;
+  padding: 10px 20px;
+  border-bottom: 1px solid #950101;
+
+}
+
+.logo img {
+  width: 90px;
+  height: 90px;
+
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+ul li {
+  list-style: none;
+  margin: 0 20px;
+  transition: 0.5s;
+
+}
+
+ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+ul:hover li a {
+  transform: scale(1.5);
+  opacity: 0.2;
+  filter: blur(5px);
+
+}
+
+ul li a:hover {
+  transform: scale(2);
+  opacity: 1;
+  filter: blur(0);
+}
+
+ul li a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff0000;
+  transition: 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+ul li a:hover:before {
+  transition: transform 0.5s;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+/* end of top bar */
+
+
+/* jumbotron */
+.jumbotron {
+  display: flex;
+  /* flex-wrap: nowrap;  */
+  align-items: center; 
+  justify-content: space-between; 
+  height: 80vh; 
+  padding: 20px; 
+  margin-top: 110px;
+  position: relative;
+  z-index: 1;
+}
+
+.jumbotron-text {
+  flex: 1; 
+  padding: 50px;
+  min-width: 300px;
+}
+
+.jumbotron-text h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+.jumbotron-text span {
+  display: block;
+  color: #ff0000;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.jumbotron-text p {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.jumbotron-image {
+  flex: 1; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  min-width: 300px;
+}
+
+.jumbotron-image img {
+  max-width: 100%; 
+  max-height: 80%; 
+  object-fit: contain; 
+  z-index: 1;
+}
+
+.jumbotron-btn {
+  display: inline-block;
+  padding: 10px 20px; 
+  background-color: #950101;
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease;
+  margin-bottom: 300px;
+  margin-top: 50px;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+.jumbotron-btn:hover {
+  background-color: #ff0000;
+  transform: translateY(-2px); 
+}
+
+/* Responsive Styles for Jumbotron */
+@media (max-width: 768px) {
+  .jumbotron {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding-top: 10px;
+  }
+
+  .jumbotron h1 {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .jumbotron-text {
+    padding-top: 100px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .jumbotron {
+    margin-top: 120px; 
+  }
+
+  .jumbotron-text h1 {
+    font-size: 2.5rem; 
+  }
+
+  .jumbotron-text h5 {
+    font-size: 0.9rem; 
+  }
+
+  .jumbotron-text p {
+    font-size: 0.9rem; 
+  }
+
+  .jumbotron-image img {
+    max-width: 100%; 
+    max-height: 80%; 
+    object-fit: contain; 
+  }
+
+}
+/* End of Jumbotron */
+
+/* card */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 30px;
+  margin-top: 10px; 
+  justify-content: center; 
+  position: relative; 
+  z-index: 10;
+}
+
+/* Card */
+.card {
+  position: relative;
+  flex: 1 1 calc(30% - 20px); 
+  max-width: 400px; 
+  height: 500px; 
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 7px solid #fff;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170%;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card:hover .card-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.card a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; 
+    gap: 30px; 
+    margin-top: 20px;
+  }
+
+  .card {
+    flex: 1 1 100%; 
+    max-width: none; 
+    height: auto; 
+  }
+}
+
+@media (max-width: 480px) {
+  .card h3 {
+    font-size: 1.2rem; 
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .card a {
+    font-size: 0.8rem;
+  }
+}
+/* End of Card */
+
+/* Synopsis Title */
+.title-synopsis-container {
+  position: relative;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.title-synopsis-container img {
+  filter: brightness(270%);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  text-align: left;
+}
+
+.overlay h1 {
+  font-size: 5rem;
+  margin: 0;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+.overlay p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+/* End of Title Synopsis */
+
+/* Synopsis Container */
+.synopsis-container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  padding: 20px;
+}
+
+.synopsis-left .first-letter, .synopsis-right .first-letter {
+  font-size: 4rem; 
+  font-weight: bold; 
+  float: left; 
+  margin-right: 10px; 
+  line-height: 1; 
+  color: #fff; 
+  font-family: "Protest Revolution", sans-serif;
+}
+
+.synopsis-left, .synopsis-right {
+  flex: 1;
+  min-width: 300px; 
+  padding: 20px;
+  background-color: #080C10;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.synopsis-left p, .synopsis-right p {
+  line-height: 1.6;
+}
+
+/* Responsif untuk Tablet */
+@media (max-width: 768px) {
+  .title-synopsis-container .overlay {
+    padding: 10px;
+    text-align: center;
+    align-items: center; 
+  }
+
+  .title-synopsis-container .overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  .title-synopsis-container .overlay p {
+    font-size: 1rem;
+  }
+
+  .synopsis-container {
+    flex-direction: column; 
+  }
+
+  .synopsis-left, .synopsis-right {
+    min-width: 100%; 
+  }
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 480px) {
+  .title-synopsis-container .overlay h1 {
+    font-size: 1.2rem;
+  }
+
+  .title-synopsis-container .overlay p {
+    font-size: 0.9rem;
+  }
+
+  .synopsis-container {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .synopsis-left, .synopsis-right {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+/* End of Synopsis Container */
+
+/* Footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* Styling for first row */
+.footer-row.first-row p {
+  font-size: 30px;
+  margin: 0;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+/* Styling for second row (5 columns) */
+.footer-row.second-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0;
+  padding-top: 5px;
+}
+
+.footer-row.second-row a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+.footer-row.second-row a:hover {
+  color: #ff0000;
+}
+
+
+.footer-col {
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-social {
+  display: flex; 
+  gap: 30px; 
+  justify-content: center; 
+  margin-top: 20px;
+}
+
+.footer-social i {
+  font-size: 30px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.footer-social i:hover {
+  color: #ff0000; 
+}
+
+
+.footer-row.last-row p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+
+@media (max-width: 768px) {
+  .footer-row.second-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-col {
+    margin-bottom: 10px;
+  }
+
+  .footer-social img {
+    width: 30px;
+    margin: 0 8px;
+  }
+} 
+/* Footer */

@@ -1,0 +1,239 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Yeseva One", serif;
+  background-color: #080C10;
+}
+
+/* post-jumbotron */
+.post-jumbotron {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 83vh; 
+}
+
+
+.post-jumbotron::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none; 
+}
+
+.post-jumbotron img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.post-jumbotron-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 35px;
+  z-index: 1;
+}
+
+
+@media (max-width: 768px) {
+  .jumbotron-text {
+      bottom: 10px;
+      left: 10px;
+      font-size: 1em; 
+  }
+}
+/* End post-jumbotron */
+
+/* Posts */
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 1200px;
+  margin-top:10px;
+  padding: 20px;
+}
+
+/* Headlines */
+.news-main {
+  flex: 3; 
+}
+
+.news-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 70px;
+}
+
+.news-card {
+  position: relative;
+  flex: 1;
+  min-width: calc(50% - 20px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Animasi pada card */
+}
+
+.news-card:hover {
+  transform: scale(1.02); /* Card sedikit membesar saat hover */
+}
+
+.news-card a {
+  text-decoration: none;
+}
+
+.news-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Animasi pada gambar */
+}
+
+.news-card:hover img {
+  transform: scale(1.4); /* Gambar membesar saat hover */
+}
+
+.news-content {
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.news-content h3 {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: #333;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Animasi pada teks */
+}
+
+.news-card:hover h3 {
+  color: black; /* Warna teks berubah saat hover */
+  transform: translateY(-5px); /* Headline sedikit naik */
+}
+
+.news-content p {
+  font-size: 0.9rem;
+  color: #666;
+  font-family: "Cantarell", sans-serif;
+  font-weight: bold;
+}
+
+.news-card:hover p {
+  color: black; /* Warna teks berubah saat hover */
+  transform: translateY(-5px); /* Headline sedikit naik */
+}
+
+/* Efek overlay */
+.news-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Animasi pada overlay */
+  z-index: 1;
+}
+
+.news-card:hover::after {
+  opacity: 1; /* Overlay muncul saat hover */
+}
+
+
+/* Sidebar */
+.news-sidebar {
+  flex: 1; 
+  max-width: 300px;
+}
+
+.news-sidebar a {
+  text-decoration: none;
+}
+
+.news-sidebar a:hover {
+  text-decoration: underline white;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* background-color: #f5f5f5; */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.sidebar-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.sidebar-item p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .news-container {
+    flex-wrap: wrap;
+  }
+
+  .news-main {
+    flex: 1;
+  }
+
+  .news-card {
+    min-width: 100%; /* Full-width cards for smaller screens */
+  }
+
+  .news-sidebar {
+    flex: 1;
+    max-width: 100%; /* Sidebar full-width on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-item {
+    gap: 5px;
+  }
+
+  .sidebar-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sidebar-item p {
+    font-size: 0.8rem;
+  }
+}
+
+/* End of Posts */
